@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch('https://rickandmortyapi.com/api/character')
             .then((response) => {
                 if (!response.ok) {
-                    throw new Error(HTTP error! status: ${response.status});
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 return response.json();
             })
@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (colElement) {
                         colElement.setAttribute("data-detail", element.id);
                     }
-                    clone.querySelector("[data-id='id']").textContent = ID: ${element.id};
-                    clone.querySelector("[data-id='name']").textContent = Name: ${element.name};
-                    clone.querySelector("[data-id='status']").textContent = Status: ${element.status};
-                    clone.querySelector("[data-id='species']").textContent = Species: ${element.species};
+                    clone.querySelector("[data-id='id']").textContent = `ID: ${element.id}`;
+                    clone.querySelector("[data-id='name']").textContent = `Name: ${element.name}`;
+                    clone.querySelector("[data-id='status']").textContent = `Status: ${element.status}`;
+                    clone.querySelector("[data-id='species']").textContent = `Species: ${element.species}`;
                     clone.querySelector("[data-id='image']").src = element.image;
                     itemList.appendChild(clone);
                 });
